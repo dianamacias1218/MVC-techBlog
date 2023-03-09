@@ -5,7 +5,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
 const session = require('express-session');
-// import sequelize connection
+// import sequelize 
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -29,7 +29,7 @@ app.set('view engine', 'handlebars');
 
 app.use(routes);
 
-// sync sequelize models to the database, then turn on the server
+// sequelize sync
 sequelize.sync({ force: false  }).then(() => {
   app.listen(PORT, () => console.log('TECH BLOG  Now listening on 3001'));
 });
