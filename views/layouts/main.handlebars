@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Blog</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body class="flex-column min-100-vh">
+  <div >
+    <header class="hero">
+       <nav>
+           <a class= "hero1"href="/">Home</a>
+           <a class= "hero1"href="/dashboard">Dashboard</a>
+            {{#if loggedIn}}
+            
+            <a id="logout" class="hero1" href="/login">logout</a>
+            {{else}}
+            <a class = "hero1" href="/login">login</a>
+            {{/if}}
+        </nav>  
+        {{#if loggedIn}}
+        <h1 class="app-title"><i class="fab fa-github"></i>Your Dashboard</h1>
+        {{else}}
+        <h1 class="app-title"><i class="fab fa-github"></i>The Tech Blog</h1>
+        {{/if}}
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+     
+    </footer>
+  </div>
+    {{#if loggedIn}}
+        <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+</body>
+
+</html>
